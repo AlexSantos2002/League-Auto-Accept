@@ -1,3 +1,4 @@
+
 # 🎮 League Auto-Accept
 
 Automatically accepts queue matches in **League of Legends** using the LCU API.
@@ -11,7 +12,7 @@ This lightweight Python tool checks the current **game phase** using the local c
 - ✅ Automatically accepts match queue pop-ups.
 - 🕵️ Detects when the League client is running.
 - 🔄 Lightweight background process (optionally starts with Windows).
-- 🖥️ (Optional) GUI in future versions.
+- 🖥️ GUI in future versions.
 - 🔒 No cheats or injection – purely reads Riot's official client API.
 
 ---
@@ -35,28 +36,54 @@ These values are extracted directly from the `LeagueClientUx.exe` process comman
    ```bash
    git clone https://github.com/yourusername/League-Auto-Accept
    cd League-Auto-Accept
+   ```
+
 3. **Install required packages**
- - pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Run Script**
-- python main.py
+   ```bash
+   python main.py
+   ```
+
+---
 
 ## 📦 Requirements:
 
 - Python 3.8+
 - League of Legends (client must be open)
 - Packages:
- - psutil
- - requests
- Install if needed:
-  
-  - pip install psutil requests
+  - psutil
+  - requests
+
+Install if needed:
+```bash
+pip install psutil requests
+```
+
+---
 
 ## ⚙️ Optional: Auto Start on Windows
 
-The project includes a registry helper to add/remove the script to Windows startup:
+The project includes a registry helper to **add/remove the script to Windows startup**.
 
-```bash
+Use the following Python functions to add or remove the script from startup:
+
+```python
 from startup import add_to_startup, remove_from_startup
-add_to_startup()  # Adds to autostart
-remove_from_startup()  # Removes from autostart
+
+# Adds to autostart
+add_to_startup()
+
+# Removes from autostart
+remove_from_startup()
+```
+
+---
+
+## 🛡️ Disclaimer
+
+This tool uses only **publicly exposed client APIs**. It does **not interact with Riot's servers**, game memory, or inject anything.  
+Use at your own risk. This is a personal automation tool, and **no warranty is provided.**
