@@ -20,6 +20,6 @@ def get_command_line():
                 "auth_url": f"https://riot:{token.group(1)}@127.0.0.1:{port.group(1)}"
             }
     except Exception as e:
-        print("Erro ao obter dados do processo:", e)
+        print("Error obtaining process data:", e)
 
     return {"auth_url": "", "token": "", "port": ""}

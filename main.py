@@ -9,12 +9,12 @@ def get_valid_auth():
     return get_command_line()
 
 def main():
-    log("Iniciando Auto-Accept do LoL. Pressione Ctrl+C para parar.")
+    log("Starting LoL Auto-Accept. Press Ctrl+C to stop.")
     auth = get_valid_auth()
 
     while True:
         if not is_lol_running():
-            log("Cliente do LoL não está em execução. Aguardando...")
+            log("LoL client is not running. Waiting...")
             time.sleep(5)
             continue
 
@@ -24,10 +24,10 @@ def main():
             continue
 
         phase = get_phase(auth["auth_url"])
-        log(f"Fase atual: {phase}")
+        log(f"Current phase: {phase}")
 
         if phase == "ReadyCheck":
-            log("Partida encontrada! Aceitando...")
+            log("Match found! Accepting...")
             accept_match(auth["auth_url"])
             time.sleep(1)
         elif phase in ["Lobby", "Matchmaking"]:
@@ -39,4 +39,4 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        log("Auto-Accept encerrado pelo usuário.")
+        log("Auto-Accept stopped by user.")
