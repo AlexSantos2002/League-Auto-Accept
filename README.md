@@ -1,35 +1,29 @@
-
-# 🎮 League Auto-Accept
+# League Auto-Accept
 
 Automatically accepts queue matches in **League of Legends** using the LCU API.
 
-## 🧠 About
+## About
 
-This lightweight Python tool checks the current **game phase** using the local client API and instantly accepts matches when they pop up (ReadyCheck phase). Ideal for multitasking or AFK moments while waiting for queue.
+This lightweight Python tool checks the current **game phase** using the local client API and instantly accepts matches when they appear (ReadyCheck phase). Ideal for multitasking or being away from the PC while waiting in queue.
 
-## ✨ Features
+## Features
 
-- ✅ Automatically accepts match queue pop-ups.
-- 🕵️ Detects when the League client is running.
-- 🔄 Lightweight background process (optionally starts with Windows).
-- 🖥️ GUI in future versions.
-- 🔒 No cheats or injection – purely reads Riot's official client API.
+- Automatically accepts match queue pop-ups
+- Detects when the League client is running
+- Lightweight background process (optionally starts with Windows)
+- No cheats or injection – strictly reads Riot's official client API
 
----
-
-## 🚀 How It Works
+## How It Works
 
 It connects to the League of Legends **LCU API** via local HTTPS using:
-- App port
+- Application port
 - Authentication token
 
 These values are extracted directly from the `LeagueClientUx.exe` process command line.
 
----
+## Installation
 
-## 🛠️ Installation
-
-1. **Install Python 3.8+**  
+1. **Install Python 3.8 or newer**  
    https://www.python.org/downloads/
 
 2. **Clone the repository**
@@ -43,16 +37,14 @@ These values are extracted directly from the `LeagueClientUx.exe` process comman
    pip install -r requirements.txt
    ```
 
-4. **Run Script**
+4. **Run the script**
    ```bash
    python main.py
    ```
 
----
+## Requirements
 
-## 📦 Requirements:
-
-- Python 3.8+
+- Python 3.8 or newer
 - League of Legends (client must be open)
 - Packages:
   - psutil
@@ -63,27 +55,18 @@ Install if needed:
 pip install psutil requests
 ```
 
----
+## Optional: Auto Start on Windows
 
-## ⚙️ Optional: Auto Start on Windows
+The project includes a registry helper to **add or remove the script to Windows startup**.
 
-The project includes a registry helper to **add/remove the script to Windows startup**.
-
-Use the following Python functions to add or remove the script from startup:
+Use the following Python functions:
 
 ```python
 from startup import add_to_startup, remove_from_startup
 
-# Adds to autostart
+# Add to startup
 add_to_startup()
 
-# Removes from autostart
+# Remove from startup
 remove_from_startup()
 ```
-
----
-
-## 🛡️ Disclaimer
-
-This tool uses only **publicly exposed client APIs**. It does **not interact with Riot's servers**, game memory, or inject anything.  
-Use at your own risk. This is a personal automation tool, and **no warranty is provided.**
